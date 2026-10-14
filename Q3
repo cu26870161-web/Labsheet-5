@@ -1,1 +1,16 @@
-
+#include <iostream> 
+using namespace std; 
+int main() 
+{    int numbers[] = {4, 8, 12, 15, 20};    
+int key;    
+cin >> key;   
+for (int i = 0; i < 5; i++) 
+{        
+if (numbers[i] == key)
+{           
+cout << "Number found";     
+break;      
+}   
+}   
+return 0;
+}
