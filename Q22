@@ -1,30 +1,31 @@
 
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n, digit;
-    int evenSum = 0, oddSum = 0;
+    int n, temp, sum = 0;
 
     cout << "Enter a number: ";
     cin >> n;
 
-    if (n < 0)
-        n = -n;
-
-    while (n > 0) {
-        digit = n % 10;
-
-        if (digit % 2 == 0)
-            evenSum += digit;
-        else
-            oddSum += digit;
-
-        n /= 10;
+    if (n <= 0) {
+        cout << "Enter a positive number";
+        return 0;
     }
 
-    cout << "Sum of even digits = " << evenSum << endl;
-    cout << "Sum of odd digits = " << oddSum;
+    temp = n;
+
+    while (temp > 0) {
+        sum += temp % 10;
+        temp /= 10;
+    }
+
+    if (n % sum == 0)
+        cout << "Harshad number";
+    else
+        cout << "Not a Harshad number";
 
     return 0;
 }
+
