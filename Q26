@@ -1,0 +1,27 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, lcm;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    if (a == 0 || b == 0) {
+        cout << "LCM = 0";
+        return 0;
+    }
+
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+
+    lcm = (a > b) ? a : b;
+
+    while (lcm % a != 0 || lcm % b != 0)
+        lcm++;
+
+    cout << "LCM = " << lcm;
+
+    return 0;
+}
