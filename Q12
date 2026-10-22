@@ -1,24 +1,25 @@
 
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n, i = 1;
-    long long factorial = 1;
+    int n, count = 0;
+    int first = 0, second = 1;
 
-    cout << "Enter a number: ";
+    cout << "Enter number of terms: ";
     cin >> n;
 
-    if (n < 0 || n > 20) {
-        cout << "Enter a number between 0 and 20";
-        return 0;
+    while (count < n) {
+        cout << first << " ";
+
+        int next = first + second;
+        first = second;
+        second = next;
+
+        count++;
     }
 
-    while (i <= n) {
-        factorial = factorial * i;
-        i++;
-    }
-
-    cout << "Factorial = " << factorial;
     return 0;
 }
+
